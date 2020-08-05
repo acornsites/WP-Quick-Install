@@ -161,7 +161,7 @@ if ( isset( $_GET['action'] ) ) {
 				$key = 0;
 				foreach ( $config_file as &$line ) {
 
-					if ( '$table_prefix  =' == substr( $line, 0, 16 ) ) {
+					if ( '$table_prefix =' == substr( $line, 0, 16 ) ) {
 						$line = '$table_prefix  = \'' . sanit( $_POST[ 'prefix' ] ) . "';\r\n";
 						continue;
 					}
@@ -177,7 +177,7 @@ if ( isset( $_GET['action'] ) ) {
 
 							// Debug mod
 							if ( (int) $_POST['debug'] == 1 ) {
-								$line = "define('WP_DEBUG', 'true');\r\n";
+								$line = "define( 'WP_DEBUG', 'true');\r\n";
 
 								// Display error
 								if ( (int) $_POST['debug_display'] == 1 ) {
